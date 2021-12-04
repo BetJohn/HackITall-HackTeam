@@ -1,1 +1,1 @@
-# HackITall-HackTeam
+# Acesta este repository-ul echipe HackTeam
