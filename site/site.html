@@ -5,6 +5,16 @@
         <link rel ="stylesheet" href="style.css">
     </head>
     <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+	
+	<script src = "data/defaultData.js">
+	</script>
+	<script src = "data/top500.js">
+	</script>
+	<script src = "data/database.js">
+	</script>
+    <script src = "data/search.js">
+	</script>
         <div class="main">
             <div class="navbar">
                 <div class="icon">
@@ -14,36 +24,65 @@
                 <div class="menu">
                     <ul>
                         <li><a href="#">Home</a></li>
+                        <li><a href="#">Investment</a></li>
+                        <li><a href="#">Stocks</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Design</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                     
                 </div>
-                <div class="search">
+                <div class="search"
+                    onclick="mySearchFunction">
+
                     <input  class="srch"
-                    type="search" name=""
-                    placeholder="Type to search">
+                    type="search"
+                    id = "myInput"
+                    placeholder="Type to search"
+                    onkeyup="mySearchFunction()">
                     <a href="#"><button class="btn">Search</button></a>
                 </div>
             </div>
             <div class="content">
                 <h1>
-                    Invata<br><span>
-                    sa investesti
-                    </span>
-                    <br>de la 0
+                    Invata<br>
                 </h1>
+                <h1>
+                    sa investesti de la 0
+                </h1>
+                <br><br>
                 <p class="par">
-                    Esti in locul potrivit!<br>
-                    aici vei avea posibilitatea<br>
-                    sa vezi si sa analizezi<br>
-                    graficele si preturile<br>
-                    celor mai MARI companii
+                    Esti in locul potrivit!
+                    aici vei avea posibilitatea
+                    sa vezi si sa analizezi
+                    graficele si preturile
+                    celor mai MARI companii. Alege una de mai jos!
                     </p>
-                <button class="cn"><a href="#">JOIN US</a></button>
+                <button class="cn" onclick="updateCompany('AAPL')">Apple</button>
+                <button class="cn" onclick="updateCompany('MSFT')">Microsoft</button>
+                <button class="cn" onclick="updateCompany('AMZN')">Amazaon</button>
+                <button class="cn" onclick="updateCompany('TSLA')">Tesla</button>
+                <button class="cn" onclick="updateCompany('GOOGL')">Alphabet A<br></button>
+                <button class="cn" onclick="updateCompany('GOOG')">Alphabet C</button>
+                <button class="cn" onclick="updateCompany('NVDA')">NVIDIA</button>
+                <button class="cn" onclick="updateCompany('FB')">Facebook</button>
+                <button class="cn" onclick="updateCompany('JPM')">JPMorgan</button>
+                <button class="cn" onclick="updateCompany('HD')">Home Depot</button>
+                <button class="cn" onclick="updateCompany('UNH')">UnitedHealth</button>
+                <button class="cn" onclick="updateCompany('JNJ')">Johnson & Johnson</button>
+                <br>
+                <input class ="input" type="number" id="UpdateStartDayId">Prima zii (0-1764)
+	            <input class ="input" type="number" id ="UpdateFinalDayId">Ultima zii (0-1764)
+
+	<button class="cn" onclick="dayUpdate()"> Update </button>  
             </div>
         </div>
+        <canvas id="canvas" style="width:100%;height:500px"></canvas>
+        <canvas id="canvas2" style="width:100%;height:200px"></canvas>
+        <script src = "data/search.js">
+        </script>
+        <script > 
+            updateGraph();
+        </script>
+        <script src="functions.js"></script>
     </body>
 </html>
