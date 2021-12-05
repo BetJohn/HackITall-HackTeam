@@ -3,7 +3,7 @@ function mySearchFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('myInput');
     updateCompany(input);
-  }
+}
   
   
   let text = "";
